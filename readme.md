@@ -35,14 +35,13 @@ __Tip:__ Recuerda que `.card__like` se encuentra dentro de `.card` lo tanto todo
 
 
 ##### 4. Botón Seguir
-Cada tarjeta tiene un botón que dice 'Seguir'. Lo que se pide es que cada vez que se le hace click al elemento `.card__follow-btn` se le agregue la clase `.card__follow-btn--following` y, si ya la tiene se le quite (o sea hacer un toggle de la clase).
+Cada tarjeta tiene un botón que dice 'Seguir'. Lo que se pide es que cada vez que se le hace click al elemento `.card__follow-btn` se le agregue la clase `.card__follow-btn--following` y, si ya la tiene se le quite (o sea hacer un toggle de la clase). (pendiente cambio de texto)
 
 
 ##### 5. Agregar imagen seleccionada
 Al final de la página hay un formulario donde se pueden agregar dinámicamente nuevas tarjetas. Poco a poco iremos agregando la programación para que funcione, sin embargo por ahora cuando uno hace un cambio en la opción: 'Seleccione una imagen', se debería desplegar dentro del div con clase `.create__image` la imagen que seleccionada en el select (y que hace referencia al value del option). Para realizar eso ya hemos agregado el tag de la imagen y lo que deberemos hacer es cambiar el src de aquella etiqueta.
 
 Deberemos escuchar el evento que se gatille con el cambio del select y posteriormente capturar el value del select y concatenarlo con la ruta para llegar a las imágenes (`assets/images/squared/`)
-
 Se recomienda revisar la información que se encuentra en la documentación de jQuery y que hace referencia a los [Eventos de formularios](https://api.jquery.com/category/events/form-events/), porque estaremos utilizando algunos de ellos. 😉
 
 __Tip:__ Si yo hago `$(event.target)` le estoy diciendo a jQuery que envuelva el target del evento y me lo entregue junto a todas sus funciones propias, para que sea más fácil utilizar la función `.val()` y muchas otras más.
@@ -58,7 +57,7 @@ __Tip:__ La concatenación en ES5 entre dos strings se realiza por medio de sign
 Para trabajar en el formulario primero que nada deberemos enfocarnos en dos puntos:
 	
 - Capturar el evento de envío del formlario y prevenir su comportamiento, para que finalmente no se genere el envío final (y no nos arroje un error o nos recargue la página).
-	- Para eso es recomendable recordar los eventos del form que se mencionaron en el punto 5.
+- Para eso es recomendable recordar los eventos del form que se mencionaron en el punto 5.
 - Almacenar el valor de cada input en una variable, cosa que después sea sencillo utilizar esa variable para imprimirlo en un nuevo elemento HTML.
 
 __Tip:__ Sabemos que el value de un select lo conseguimos con el método `val()`, sin embargo para saber cual es el texto que el usuario vio al seleccionar el elemento lo podremos conseguir de esta forma: <code>$('select').children(':selected').text()</code>. O sea, seleccioando el elemento, para luego ver cual de los hijos fue el seleccionado y ahí obtener el texto de éste.
